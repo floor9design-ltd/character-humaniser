@@ -1,0 +1,19 @@
+# .dependabot.yml
+#
+# Setup for dependabot on github
+#
+# @category  None
+# @package   \
+# @author    Rick Morice <rick@floor9design.com>
+# @copyright Floor9design Ltd
+# @license   Proprietary software
+# @version   1.0
+# @link      https://github.com/floor9design-ltd/character-humaniser
+# @link      https://floor9design.com
+# @since     File available since pre-release development cycle
+version: 2
+updates:
+  - package-ecosystem: composer
+    directory: /
+    schedule:
+      interval: daily
