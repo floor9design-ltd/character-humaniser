@@ -18,6 +18,18 @@ A class that offers quick ways to make confusing/complex strings readable, for e
 Passwords often give confusing/difficult outputs. For example: lower case l (lima) and upper case i (indigo) are 
 similar in many fonts, and symbols such as tilde have names that are often unknown or difficult to remember.
 
+For example:
+
+```
+$password = 'lIaA3~';
+```
+
+... can be easily translated to:
+
+```
+$password_humanised = 'lima INDIGO alpha ALPHA three tilde';
+```
+
 ## Features
 
 [![Latest Version](https://img.shields.io/github/v/release/floor9design-ltd/character-humaniser?include_prereleases&style=plastic)](https://github.com/floor9design-ltd/character-humaniser/releases)
