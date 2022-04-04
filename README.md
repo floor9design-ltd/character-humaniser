@@ -68,6 +68,13 @@ This is discussed in the usage document.
 
 * [usage](docs/project/usage.md)
 
+## Recommended
+
+The following related class has a great password generating function:
+
+* [floor9design-ltd/test-data-generator](https://github.com/floor9design-ltd/test-data-generator)
+* Use `randomPassword()`
+
 ## Setup
 
 There are no specific config setup steps required. 
