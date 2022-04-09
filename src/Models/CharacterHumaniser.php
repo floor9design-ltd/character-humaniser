@@ -132,6 +132,13 @@ class CharacterHumaniser
     ];
 
     /**
+     * @var array<array<string>> Custom array available for users
+     */
+    protected array $custom = [];
+
+    // Accessors
+
+    /**
      * @return array<array<string>>
      * @see $nato_letters
      */
@@ -157,6 +164,39 @@ class CharacterHumaniser
     {
         return $this->symbols;
     }
+
+    /**
+     * @return array<array<string>>
+     * @see $custom
+     */
+    public function getCustom(): array
+    {
+        return $this->custom;
+    }
+
+    /**
+     * @param array<array<string>> $custom
+     * @return CharacterHumaniser
+     * @throws CharacterHumaniserException
+     * @see $custom
+     */
+    public function setCustom(array $custom): CharacterHumaniser
+    {
+        foreach($custom as $item) {
+            if(
+                !is_array($item) ||
+                !array_key_exists('char', $item) ||
+                !array_key_exists('name', $item)
+            ) {
+                throw new CharacterHumaniserException('The $custom array was incorrectly formed');
+            }
+        }
+
+        $this->custom = $custom;
+        return $this;
+    }
+
+    // Functionality
 
     /**
      * @param string $original
@@ -201,6 +241,14 @@ class CharacterHumaniser
             }
 
             foreach ($this->getSymbols() as $symbol) {
+                // symbol
+                if ($char === $symbol['char']) {
+                    $humanised[] = $symbol['name'];
+                    unset($remaining[$key]);
+                }
+            }
+
+            foreach ($this->getCustom() as $symbol) {
                 // symbol
                 if ($char === $symbol['char']) {
                     $humanised[] = $symbol['name'];

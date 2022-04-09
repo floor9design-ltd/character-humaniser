@@ -47,6 +47,7 @@ class CharacterHumaniserTest extends TestCase
      * Test accessors.
      *
      * @return void
+     * @throws CharacterHumaniserException
      */
     public function testContentTypeAccessors()
     {
@@ -84,6 +85,30 @@ class CharacterHumaniserTest extends TestCase
             'number sign (hash)',
             'getSymbols did not load the correct value'
         );
+
+        // symbols
+        $this->assertIsArray(
+            $character_humaniser->getCustom(),
+            'getCustom did not return an array'
+        );
+        $this->assertEquals(
+            $character_humaniser->getCustom(),
+            [],
+            'getCustom should be empty by default'
+        );
+
+        // set a symbol
+        $character_humaniser->setCustom([['char' => '€', 'name' => 'Euro symbol']]);
+        $this->assertEquals(
+            $character_humaniser->getCustom(),
+            [['char' => '€', 'name' => 'Euro symbol']],
+            'getCustom should be empty by default'
+        );
+
+        // symbol setter exception
+        $this->expectException(CharacterHumaniserException::class);
+        $this->expectExceptionMessage('The $custom array was incorrectly formed');
+        $character_humaniser->setCustom(['€']);
     }
 
     /**
@@ -128,7 +153,7 @@ class CharacterHumaniserTest extends TestCase
     }
 
     /**
-     * Test humaniseToArray().
+     * Test humaniseToString().
      *
      * @return void
      * @throws CharacterHumaniserException
@@ -138,6 +163,32 @@ class CharacterHumaniserTest extends TestCase
         $character_humaniser = new CharacterHumaniser();
         $test_string = 'aA3~';
         $expected_string = 'alpha ALPHA three tilde';
+        $processed = $character_humaniser->humaniseToString($test_string);
+
+        $this->assertIsString(
+            $processed,
+            'humaniseToString did not return a string'
+        );
+
+        $this->assertSame(
+            $expected_string,
+            $processed,
+            'humaniseToString did not correctly translate the string'
+        );
+    }
+
+    /**
+     * Test humaniseToString() with a custom field.
+     *
+     * @return void
+     * @throws CharacterHumaniserException
+     */
+    public function testHumaniseToStringWithCustom()
+    {
+        $character_humaniser = new CharacterHumaniser();
+        $character_humaniser->setCustom([['char' => '€', 'name' => 'Euro symbol']]);
+        $test_string = 'aA3~€';
+        $expected_string = 'alpha ALPHA three tilde Euro symbol';
         $processed = $character_humaniser->humaniseToString($test_string);
 
         $this->assertIsString(
