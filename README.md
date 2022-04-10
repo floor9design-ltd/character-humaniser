@@ -20,13 +20,13 @@ similar in many fonts, and symbols such as tilde have names that are often unkno
 
 For example:
 
-```
+```php
 $password = 'lIaA3~';
 ```
 
 ... can be easily translated to:
 
-```
+```php
 $password_humanised = 'lima INDIGO alpha ALPHA three tilde';
 ```
 
@@ -35,10 +35,20 @@ $password_humanised = 'lima INDIGO alpha ALPHA three tilde';
 [![Latest Version](https://img.shields.io/github/v/release/floor9design-ltd/character-humaniser?include_prereleases&style=plastic)](https://github.com/floor9design-ltd/character-humaniser/releases)
 [![Packagist](https://img.shields.io/packagist/v/floor9design/character-humaniser?style=plastic)](https://packagist.org/packages/floor9design/character-humaniser)
 
-The classes offer:
+The `CharacterHumaniser` class offers:
 
 * array and string output for easy display
 * catches unexpected characters
+* ability to add your own custom definitions to undefined symbols/letters
+
+As a bonus, there is a joke class: `BadCharacterHumaniser` which does a funny but awful attempt at the same:
+
+```php
+$password = '$aX3k';
+// can be badly converted to:
+$password_humanised = 'benjamins aether XYLOPHONE cup of tea knife';
+```
+
 
 ## Install
 

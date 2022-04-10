@@ -29,7 +29,7 @@ Unexpected symbols (eg `€`) throw a `CharacterHumaniserException`, listing the
 
 To add custom definitions, you can use the `setCustom()` functionality as follows:
 
-```php 
+```php
 use Floor9design\CharacterHumaniser\Models\CharacterHumaniser;
 $character_humaniser = new CharacterHumaniser();
 
@@ -44,3 +44,24 @@ $processed = $character_humaniser->humaniseToString($test_string);
 // 'alpha ALPHA three tilde Euro symbol'
 ```
 
+## BadCharacterHumaniser
+
+For a joke/april fools, the `BadCharacterHumaniser` class can also be used. This has deliberately confusing phrases and
+definitions to give a comedic answer. It uses deliberately misleading phonetic sounds (eg: knife = k), bingo definitions
+(cup of tea = three), and vague or incorrect symbol definitions (benjamins = $).
+
+```php
+// include the class however you see fit:
+use Floor9design\CharacterHumaniser\Models\BadCharacterHumaniser;
+
+// instantiate it how you see fit:
+$bad_character_humaniser = new BadCharacterHumaniser();
+
+// Example password string: 
+$password = '$aX3k';
+
+// Output a string, specifying a comma as a separator:
+echo $bad_character_humaniser->humaniseToString($password, ', ');
+// Outputs: 'benjamins, aether, XYLOPHONE, cup of tea, knife';
+
+```
