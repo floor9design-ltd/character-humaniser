@@ -38,7 +38,8 @@ use Floor9design\CharacterHumaniser\Exceptions\CharacterHumaniserException;
  * @version   0.0.1
  * @link      https://www.floor9design.com
  * @since     File available since pre-release development cycle
- * @see       https://jsonapi.org/format/
+ * @see       https://en.wikipedia.org/wiki/NATO_phonetic_alphabet
+ * @see       https://owasp.org/www-community/password-special-characters
  */
 class CharacterHumaniser
 {
@@ -73,6 +74,7 @@ class CharacterHumaniser
         ['char' => 'v', 'name' => 'victor'],
         ['char' => 'w', 'name' => 'whiskey'],
         ['char' => 'x', 'name' => 'xray'],
+        ['char' => 'y', 'name' => 'yankee'],
         ['char' => 'z', 'name' => 'zulu']
     ];
 
