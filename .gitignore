@@ -7,7 +7,7 @@
 # @author    Rick Morice <rick@floor9design.com>
 # @copyright Floor9design Ltd
 # @license   Proprietary software
-# @version   1.0
+# @version   1.1.0
 # @link      https://github.com/floor9design-ltd/character-humaniser
 # @link      https://floor9design.com
 # @since     File available since pre-release development cycle
@@ -21,4 +21,4 @@ vendor
 # Testing
 docs/tests/*
 docs/phpdoc/*
-/.phpunit.result.cache
+/.phpunit.cache
