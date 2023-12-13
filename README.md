@@ -94,7 +94,7 @@ however is most appropriate.
 ## Testing
 
 [![Build Status](https://img.shields.io/travis/com/floor9design-ltd/character-humaniser?style=plastic)](https://travis-ci.com/github/floor9design-ltd/character-humaniser)
-[![Build Status](https://img.shields.io/codecov/c/github/floor9design-ltd/character-humaniser?style=plastic)](https://codecov.io/gh/floor9design-ltd/character-humaniser)
+[![Code Coverage](https://img.shields.io/codecov/c/github/floor9design-ltd/character-humaniser?style=plastic)](https://codecov.io/gh/floor9design-ltd/character-humaniser)
 
 Tests can be run as follows:
 
