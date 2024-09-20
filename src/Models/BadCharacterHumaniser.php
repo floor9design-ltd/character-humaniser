@@ -11,7 +11,7 @@
  * @author    Rick Morice <rick@floor9design.com>
  * @copyright Floor9design Ltd
  * @license   MIT
- * @version   1.1.0
+ * @version   1.2.0
  * @link      https://www.floor9design.com
  * @see       \Floor9design\CharacterHumaniser\Models\CharacterHumaniser
  * @see       https://en.wikipedia.org/wiki/NATO_phonetic_alphabet
@@ -34,7 +34,7 @@ use Floor9design\CharacterHumaniser\Exceptions\CharacterHumaniserException;
  * @author    Rick Morice <rick@floor9design.com>
  * @copyright Floor9design Ltd
  * @license   MIT
- * @version   1.1.0
+ * @version   1.2.0
  * @link      https://www.floor9design.com
  * @see       \Floor9design\CharacterHumaniser\Models\CharacterHumaniser
  * @since     File available since pre-release development cycle
